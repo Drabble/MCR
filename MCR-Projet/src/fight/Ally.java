@@ -1,6 +1,6 @@
 package fight;
 
-public class Ally {
+public abstract class Ally {
     private String name;
     private int pv;
     protected AttackType strong;
@@ -18,7 +18,24 @@ public class Ally {
         this.weak = weak;
         this.skip = skip;
         this.next = next;
+
         this.isDead = false;
+    }
+
+    public Ally(String name, int pv, AttackType strong, AttackType normal, AttackType weak, AttackType skip) {
+        this.name = name;
+        this.pv = pv;
+        this.strong = strong;
+        this.normal = normal;
+        this.weak = weak;
+        this.skip = skip;
+
+        this.next = null;
+        this.isDead = false;
+    }
+
+    public void setNext(Ally next){
+        this.next = next;
     }
 
     public void handleAttack(Enemy enemy, Attack attack) {
@@ -26,7 +43,6 @@ public class Ally {
         int actualDamages = 0;
 
         System.out.println(name + " handle attack from " + enemy.getName());
-
 
         // If ally dead or cannot handle attack
         if (isDead || attack.getAttackType() == skip) {
@@ -46,13 +62,13 @@ public class Ally {
                 actualDamages = attack.getDamages() / 4;
                 losePV(actualDamages);
                 handleType = "strong";
-            // Standard defense (take 1/2 of the damages)
+                // Standard defense (take 1/2 of the damages)
             } else if (attack.getAttackType() == normal) {
                 enemy.blocked(2);
                 actualDamages = attack.getDamages() / 2;
                 losePV(actualDamages);
                 handleType = "normal";
-            // Weak defense (take whole damage)
+                // Weak defense (take whole damage)
             } else if (attack.getAttackType() == weak) {
                 enemy.blocked(1);
                 actualDamages = attack.getDamages();
@@ -87,7 +103,6 @@ public class Ally {
             } else {
                 System.out.println(enemy.getName() + " has been killed !");
             }
-
         }
     }
 
@@ -103,4 +118,10 @@ public class Ally {
             this.pv = 0;
         }
     }
+
+    public String name(){
+        return name;
+    }
+
+    public abstract String description();
 }

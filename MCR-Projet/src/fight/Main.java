@@ -3,24 +3,20 @@ package fight;
 public class Main {
 
     public static void main(String[] args) {
-        /*
-           Scénario actuel:
-            - enemy attaque
-            - a1 skippe l'attaque
-            - a2 effectue un bon blocage, subit un quart des dégats mais meurt tout de même (retire 3 points d'attaque à enemy)
-            - a3 effectue un blocage normal, subit la moitié des dégats et retire les deux points d'attaque restants à enemy
-            => trésor sauvé
+        AllyTeam allies = new AllyTeam();
 
-            Note: changer le nombre d'attaques de l'ennemi de 5 à 6 le fait accéder au trésor
+        if (allies.isReady()) {
+            // Create enemies
+            Enemy enemy = new Enemy("Bad", AttackType.HorseCharge, 4);
+            Enemy enemy2 = new Enemy("Crac", AttackType.Magic, 3);
+            Enemy enemy3 = new Enemy("Boum", AttackType.Sword, 2);
 
-         */
-
-        Ally a3 = new Ally("Three", 20, AttackType.Arrow, AttackType.HorseCharge, AttackType.Magic, AttackType.Sword, null);
-        Ally a2 = new Ally("Two", 10, AttackType.HorseCharge, AttackType.Magic, AttackType.Sword, AttackType.Arrow, a3);
-        Ally a1 = new Ally("One", 20, AttackType.Magic, AttackType.Sword, AttackType.Arrow, AttackType.HorseCharge, a2);
-
-        Enemy enemy = new Enemy("Bad", AttackType.HorseCharge, 5);
-
-        a1.handleAttack(enemy, new Attack(enemy.getAttackType(), 20));
+            // Handle all enemies (loop ?)
+            allies.handle(enemy, new Attack(enemy.getAttackType(), 15));
+            allies.handle(enemy2, new Attack(enemy2.getAttackType(), 12));
+            allies.handle(enemy3, new Attack(enemy3.getAttackType(), 17));
+        } else {
+            System.out.println("User cancelled team creation");
+        }
     }
 }
