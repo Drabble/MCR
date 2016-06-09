@@ -97,6 +97,7 @@ public class AllyTeam {
                     System.out.println(" - " + allies.get(c).description());
                 }
 
+                System.out.println(this);
                 System.out.println("Is this order Ok ? [o = oui]");
                 String answer = scan.nextLine();
 
@@ -129,6 +130,9 @@ public class AllyTeam {
     }
 
     public void handle(Enemy enemy, Attack attack) {
+        for(int i = 0; i < 20; i++){
+            System.out.println("\n");
+        }
         System.out.println(enemy.getName() + " Attacks the team");
         allies.get(0).handleAttack(enemy, attack);
     }

@@ -2,7 +2,7 @@ package fight;
 
 public class Warrior extends Ally {
     public Warrior(String name) {
-        super(name, 30, AttackType.Sword, AttackType.HorseCharge, AttackType.Magic, AttackType.Arrow);
+        super(name, 30, AttackType.Sword, AttackType.Horse, AttackType.Magic, AttackType.Arrow);
     }
 
     public static String definition() {
@@ -10,6 +10,6 @@ public class Warrior extends Ally {
     }
 
     public String description(){
-        return "Warrior : " + super.name();
+        return "Warrior : " + super.description();
     }
 }

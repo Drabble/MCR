@@ -12,7 +12,7 @@ public class Enemy {
     }
 
     public String getName() {
-        return name;
+        return Ansi.ANSI_RED + name + Ansi.ANSI_RESET;
     }
 
     public AttackType getAttackType() {
@@ -25,5 +25,13 @@ public class Enemy {
 
     public boolean canAttack() {
         return numAttacks > 0;
+    }
+
+    public String description(){
+        return "Enemy : " + getName() + ", Attack type " + getAttackType() + ", number of attacks " + numAttacks;
+    }
+
+    public int getNumberOfAttacks() {
+        return numAttacks;
     }
 }

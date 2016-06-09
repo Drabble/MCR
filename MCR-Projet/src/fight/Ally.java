@@ -1,5 +1,7 @@
 package fight;
 
+import java.io.IOException;
+
 public abstract class Ally {
     private String name;
     private int pv;
@@ -42,17 +44,19 @@ public abstract class Ally {
         String handleType = "";
         int actualDamages = 0;
 
-        System.out.println(name + " handle attack from " + enemy.getName());
+        System.out.println(name() + " handle attack from " + enemy.getName());
 
         // If ally dead or cannot handle attack
         if (isDead || attack.getAttackType() == skip) {
             if (next != null) {
                 // Give handle to next ally
-                System.out.println(name + " cannot handle attack. Next one!");
+                System.out.println(name() + " cannot handle attack. Next one!");
+                printStatus(enemy);
                 next.handleAttack(enemy, attack);
             } else {
                 // No next ally (end of the chain)
                 System.out.println("The enemy accessed to your treasure. You lost!");
+                printStatus(enemy);
             }
             return;
         } else {
@@ -81,13 +85,14 @@ public abstract class Ally {
             }
 
             // Show attack information
-            System.out.println(name + " held a " + handleType + " attack off and lost " + actualDamages
+            System.out.println(name() + " held a " + handleType + " attack off and lost " + actualDamages
                     + " pv. [remaining : " + pv + "]");
 
             // Check if ally is dead
             if (pv == 0) {
                 isDead = true;
-                System.out.println(name + " is dead !");
+                System.out.println(name() + " is dead !");
+                printStatus(enemy);
             }
 
             // Check if enemy can still attack
@@ -95,6 +100,7 @@ public abstract class Ally {
 
                 // If it can, check the next ally able to handle the attack
                 if (next != null) {
+                    printStatus(enemy);
                     next.handleAttack(enemy, attack);
                 } else {
                     System.out.println("Enemy " + enemy.getName() + " accessed to your treasure. You lost!");
@@ -102,8 +108,38 @@ public abstract class Ally {
                 }
             } else {
                 System.out.println(enemy.getName() + " has been killed !");
+                printStatus(enemy);
             }
         }
+    }
+
+    public void printStatus(Enemy enemy){
+        printAllies();
+
+        System.out.println("--------------------------------------");
+        System.out.println(enemy.getName());
+        System.out.println("Number of attacks\tAttack type");
+        System.out.println(enemy.getNumberOfAttacks() + "\t" + enemy.getAttackType());
+        System.out.println("--------------------------------------");
+        System.out.println("Click enter to continue !");
+        try {
+            while(System.in.read() != '\n');
+        } catch (IOException e) {
+            System.err.println("Error reading input : " + e.getMessage());
+        }
+        for(int i = 0; i < 20; i++){
+            System.out.println("\n");
+        }
+    }
+
+    public void printAllies(){
+        if(next != null){
+            next.printAllies();
+        }
+        System.out.println("--------------------------------------");
+        System.out.println(name());
+        System.out.println("HP\tStrong\tNormal\tWeak\tSkip");
+        System.out.println(getPv() + "\t" + getStrong() + "\t" + getNormal() + "\t" + getWeak() + "\t" + getSkip());
     }
 
     /**
@@ -119,9 +155,35 @@ public abstract class Ally {
         }
     }
 
-    public String name(){
-        return name;
+    public int getPv() {
+        return pv;
     }
 
-    public abstract String description();
+    public AttackType getNormal() {
+        return normal;
+    }
+
+    public AttackType getWeak() {
+        return weak;
+    }
+
+    public AttackType getSkip() {
+        return skip;
+    }
+
+    public AttackType getStrong(){
+        return strong;
+    }
+
+    public boolean isDead() {
+        return isDead;
+    }
+
+    public String name(){
+        return Ansi.ANSI_GREEN + name + Ansi.ANSI_RESET;
+    }
+
+    public String description(){
+        return name() + " " + getPv() + "Pv";
+    }
 }
