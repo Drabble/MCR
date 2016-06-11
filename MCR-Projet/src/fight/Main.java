@@ -24,11 +24,20 @@ public class Main {
                     // Handle enemies attacks
                     for (Enemy enemy : enemies) {
                         allies.handle(enemy, new Attack(enemy.getAttackType(), 15));
+                        if(allies.hasLost()){
+                            break;
+                        }
+                    }
+                    if(allies.hasLost()){
+                        System.out.println("You lost !");
+                    }
+                    else{
+                        System.out.println("You won !");
                     }
                 } else {
                     System.out.println("User cancelled team creation");
                 }
-                System.out.println("Would you like to start again ? [o=oui]");
+                System.out.println("Would you like to start again ? [o = oui]");
 
             } while(System.in.read() == 'o');
         } catch (IOException e) {

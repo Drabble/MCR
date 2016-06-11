@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class AllyTeam {
     private List<Ally> allies;
     private boolean ready;
+    private boolean hasLost = false;
 
     public AllyTeam() {
         allies = new LinkedList();
@@ -26,11 +27,14 @@ public class AllyTeam {
         Scanner scan = new Scanner(System.in);
 
         // Show choices
-        System.out.println("1: " + Warrior.definition());
-        System.out.println("2: " + Archer.definition());
-        System.out.println("3: " + Horseman.definition());
-        System.out.println("4: " + Magus.definition());
-        System.out.println("0: Quit");
+        System.out.println("List of classes");
+        System.out.println("Id\tType\t\tHP\tStrong against\tNormal against\tWeak against\tSkip against");
+        System.out.println("-------------------------------------------------------------------------------");
+        System.out.println("1\t" + Warrior.definition());
+        System.out.println("2\t" + Archer.definition());
+        System.out.println("3\t" + Horseman.definition());
+        System.out.println("4\t" + Magus.definition());
+        System.out.println("0\texit\n");
 
         // Complete choice (characters and order)
         while (!choiceOk) {
@@ -53,28 +57,28 @@ public class AllyTeam {
                         switch (ch) {
                             case 1:
                                 String wName = getName();
-                                allies.add(new Warrior(wName));
+                                allies.add(new Warrior(wName, this));
                                 System.out.println("Warrior \"" + wName + "\" added to pos " + (i + 1));
                                 entryOk = true;
                                 break;
 
                             case 2:
                                 String aName = getName();
-                                allies.add(new Archer(aName));
+                                allies.add(new Archer(aName, this));
                                 System.out.println("Archer \"" + aName + "\" added to pos " + (i + 1));
                                 entryOk = true;
                                 break;
 
                             case 3:
                                 String hName = getName();
-                                allies.add(new Horseman(hName));
+                                allies.add(new Horseman(hName, this));
                                 System.out.println("Horseman \"" + hName + "\" added to pos " + (i + 1));
                                 entryOk = true;
                                 break;
 
                             case 4:
                                 String mName = getName();
-                                allies.add(new Magus(mName));
+                                allies.add(new Magus(mName, this));
                                 System.out.println("Magus \"" + mName + "\" added to pos " + (i + 1));
                                 entryOk = true;
                                 break;
@@ -93,12 +97,14 @@ public class AllyTeam {
             }
 
             if (!quit) {
+                System.out.println("\nResume of the team");
+                System.out.println("No\tClass\t\tHP\tName");
+                System.out.println("------------------------");
                 for (int c = 0; c < allies.size(); c++) {
-                    System.out.println(" - " + allies.get(c).description());
+                    System.out.println((c + 1) + "\t" + allies.get(c).description());
                 }
 
-                System.out.println(this);
-                System.out.println("Is this order Ok ? [o = oui]");
+                System.out.println("\nIs this order Ok ? [o = oui]");
                 String answer = scan.nextLine();
 
                 if (answer.equals("o")) {
@@ -135,5 +141,13 @@ public class AllyTeam {
         }
         System.out.println(enemy.getName() + " Attacks the team");
         allies.get(0).handleAttack(enemy, attack);
+    }
+
+    public void lost(){
+        hasLost = true;
+    }
+
+    public boolean hasLost(){
+        return hasLost;
     }
 }

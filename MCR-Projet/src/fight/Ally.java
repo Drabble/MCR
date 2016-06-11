@@ -11,6 +11,7 @@ public abstract class Ally {
     private AttackType skip;
     private Ally next;
     private boolean isDead;
+    private AllyTeam team;
 
     public Ally(String name, int pv, AttackType strong, AttackType normal, AttackType weak, AttackType skip, Ally next) {
         this.name = name;
@@ -24,13 +25,14 @@ public abstract class Ally {
         this.isDead = false;
     }
 
-    public Ally(String name, int pv, AttackType strong, AttackType normal, AttackType weak, AttackType skip) {
+    public Ally(String name, int pv, AttackType strong, AttackType normal, AttackType weak, AttackType skip, AllyTeam team) {
         this.name = name;
         this.pv = pv;
         this.strong = strong;
         this.normal = normal;
         this.weak = weak;
         this.skip = skip;
+        this.team = team;
 
         this.next = null;
         this.isDead = false;
@@ -56,6 +58,7 @@ public abstract class Ally {
             } else {
                 // No next ally (end of the chain)
                 System.out.println("The enemy accessed to your treasure. You lost!");
+                team.lost();
                 printStatus(enemy);
             }
             return;
@@ -104,7 +107,7 @@ public abstract class Ally {
                     next.handleAttack(enemy, attack);
                 } else {
                     System.out.println("Enemy " + enemy.getName() + " accessed to your treasure. You lost!");
-                    return;
+                    team.lost();
                 }
             } else {
                 System.out.println(enemy.getName() + " has been killed !");
@@ -114,13 +117,16 @@ public abstract class Ally {
     }
 
     public void printStatus(Enemy enemy){
+        System.out.println("\nStatus");
+        System.out.println("HP\tStrong against\tNormal against\tWeak against\tSkip against\tName");
+        System.out.println("---------------------------------------------------------------------------------");
+
         printAllies();
 
-        System.out.println("--------------------------------------");
-        System.out.println(enemy.getName());
-        System.out.println("Number of attacks\tAttack type");
-        System.out.println(enemy.getNumberOfAttacks() + "\t" + enemy.getAttackType());
-        System.out.println("--------------------------------------");
+        System.out.println("\nAttack type\tNumber of attacks\tName");
+        System.out.println("----------------------------------------");
+        System.out.println(enemy.getAttackType() + "\t\t" + enemy.getNumberOfAttacks() + "\t\t\t\t\t" + enemy.getName());
+        System.out.println();
         System.out.println("Click enter to continue !");
         try {
             while(System.in.read() != '\n');
@@ -133,13 +139,10 @@ public abstract class Ally {
     }
 
     public void printAllies(){
+        System.out.println(getPv() + "\t" + getStrong() + "\t\t\t" + getNormal() + "\t\t\t" + getWeak() + "\t\t\t" + getSkip() + "\t\t\t" + name());
         if(next != null){
             next.printAllies();
         }
-        System.out.println("--------------------------------------");
-        System.out.println(name());
-        System.out.println("HP\tStrong\tNormal\tWeak\tSkip");
-        System.out.println(getPv() + "\t" + getStrong() + "\t" + getNormal() + "\t" + getWeak() + "\t" + getSkip());
     }
 
     /**
@@ -184,6 +187,6 @@ public abstract class Ally {
     }
 
     public String description(){
-        return name() + " " + getPv() + "Pv";
+        return pv + "\t" + name() + "\t";
     }
 }
