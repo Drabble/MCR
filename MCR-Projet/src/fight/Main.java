@@ -3,6 +3,8 @@ package fight;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.io.IOException;
+
 
 public class Main {
 
@@ -20,8 +22,8 @@ public class Main {
 
         List<Enemy> enemies = Arrays.asList(new Enemy(),new Enemy(),new Enemy(),new Enemy());
 
-        for(Enemy e : enemies)
-            System.out.println(e);
+        //for(Enemy e : enemies)
+        //    System.out.println(e);
 
 
         /*
@@ -33,16 +35,48 @@ public class Main {
             => trésor sauvé
 
             Note: changer le nombre d'attaques de l'ennemi de 5 à 6 le fait accéder au trésor
-
-
-
-        Ally a3 = new Ally("Three", 20, AttackType.Arrow, AttackType.HorseCharge, AttackType.Magic, AttackType.Sword, null);
-        Ally a2 = new Ally("Two", 10, AttackType.HorseCharge, AttackType.Magic, AttackType.Sword, AttackType.Arrow, a3);
-        Ally a1 = new Ally("One", 20, AttackType.Magic, AttackType.Sword, AttackType.Arrow, AttackType.HorseCharge, a2);
-
-        Enemy enemy = new Enemy("Bad", AttackType.HorseCharge, 5);
-
-        a1.handleAttack(enemy, new Attack(enemy.getAttackType(), 20));
         */
+
+
+        try {
+            do {
+                for(int i = 0; i < 20; i++){
+                    System.out.println("\n");
+                }
+                AllyTeam allies = new AllyTeam();
+
+
+
+                if (allies.isReady()) {
+                    // Create enemies
+/*                    Enemy[] enemies = {
+                            new Enemy("Bad", AttackType.HorseCharge, 4),
+                            new Enemy("Crac", AttackType.Magic, 3),
+                            new Enemy("Boum", AttackType.Sword, 2)
+                    };*/
+
+                    // Handle enemies attacks
+                    for (Enemy enemy : enemies) {
+                        allies.handle(enemy, new Attack(enemy.getAttackType(), 15));
+                        if(allies.hasLost()){
+                            break;
+                        }
+                    }
+                    if(allies.hasLost()){
+                        System.out.println("You lost !");
+                    }
+                    else{
+                        System.out.println("You won !");
+                    }
+                } else {
+                    System.out.println("User cancelled team creation");
+                }
+                System.out.println("Would you like to start again ? [o = oui]");
+
+            } while(System.in.read() == 'o');
+        } catch (IOException e) {
+            System.out.println("Error reading the input : " + e.getMessage());
+        }
+
     }
 }

@@ -26,4 +26,5 @@ public enum AttackType {
         return ATTYPES.get(RANDOM.nextInt(SIZE));
 
     }
+
 }
