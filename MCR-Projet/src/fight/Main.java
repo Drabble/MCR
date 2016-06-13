@@ -10,22 +10,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("************************************************");
-        System.out.println("Bienvenue dans le jeu Chain of Invicibility");
-        System.out.println("************************************************");
-        System.out.println();
-
-        System.out.println("*************************************************");
-        System.out.println("Voici les ennemis que vous allez devoir affronter");
-        System.out.println("*************************************************");
-        System.out.println();
-
-        List<Enemy> enemies = Arrays.asList(new Enemy(),new Enemy(),new Enemy(),new Enemy());
-
-        //for(Enemy e : enemies)
-        //    System.out.println(e);
-
-
         /*
            Scénario actuel:
             - enemy attaque
@@ -40,20 +24,25 @@ public class Main {
 
         try {
             do {
-                for(int i = 0; i < 20; i++){
-                    System.out.println("\n");
+                System.out.println("************************************************");
+                System.out.println("WELCOME TO THE GAME CHAIN OF INVICIBILITY");
+                System.out.println("************************************************");
+                System.out.println();
+
+                List<Enemy> enemies = Arrays.asList(new Enemy(),new Enemy(),new Enemy(),new Enemy());
+
+                System.out.println("List of enemies : \n");
+                System.out.println("No\tAttack type\tAttack power\tName");
+                System.out.println("-----------------------------------");
+                int cnt = 1;
+                for(Enemy e : enemies){
+                    System.out.println(cnt++ + "\t" + e);
                 }
+                System.out.println();
+
                 AllyTeam allies = new AllyTeam();
 
-
-
                 if (allies.isReady()) {
-                    // Create enemies
-/*                    Enemy[] enemies = {
-                            new Enemy("Bad", AttackType.HorseCharge, 4),
-                            new Enemy("Crac", AttackType.Magic, 3),
-                            new Enemy("Boum", AttackType.Sword, 2)
-                    };*/
 
                     // Handle enemies attacks
                     for (Enemy enemy : enemies) {

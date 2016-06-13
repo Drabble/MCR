@@ -27,7 +27,7 @@ public class AllyTeam {
         Scanner scan = new Scanner(System.in);
 
         // Show choices
-        System.out.println("List of classes");
+        System.out.println("List of classes : \n");
         System.out.println("Id\tType\t\tHP\tStrong against\tNormal against\tWeak against\tSkip against");
         System.out.println("-------------------------------------------------------------------------------");
         System.out.println("1\t" + Warrior.definition());
@@ -97,7 +97,7 @@ public class AllyTeam {
             }
 
             if (!quit) {
-                System.out.println("\nResume of the team");
+                System.out.println("\nResume of the team : \n");
                 System.out.println("No\tClass\t\tHP\tName");
                 System.out.println("------------------------");
                 for (int c = 0; c < allies.size(); c++) {

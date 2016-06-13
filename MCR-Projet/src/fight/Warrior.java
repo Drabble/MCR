@@ -2,15 +2,14 @@ package fight;
 
 public class Warrior extends Ally {
     public Warrior(String name, AllyTeam team) {
-        super(name, 30, AttackType.Sword, AttackType.HorseCharge, AttackType.Magic, AttackType.Arrow, team);
+        super(name, 30, AttackType.Sword, AttackType.Horse, AttackType.Magic, AttackType.Arrow, team);
     }
 
     public static String definition() {
-        return Ansi.ANSI_YELLOW + "Warrior\t\t" + Ansi.ANSI_RESET + "30\t" + Ansi.ANSI_YELLOW +
-                "sword\t\t\t" + Ansi.ANSI_PURPLE + "horse\t\t\t" + Ansi.ANSI_CYAN + "magic\t\t\t" + Ansi.ANSI_GREEN + "arrow" + Ansi.ANSI_RESET;
+        return "Warrior\t\t" + "30\t" + AttackType.Sword + "\t\t\t" + AttackType.Horse + "\t\t\t" + AttackType.Magic + "\t\t\t" + AttackType.Arrow;
     }
 
     public String description(){
-        return Ansi.ANSI_YELLOW + "Warrior\t\t" + Ansi.ANSI_RESET + super.description();
+        return "Warrior\t\t" + super.description();
     }
 }

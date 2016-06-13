@@ -117,7 +117,7 @@ public abstract class Ally {
     }
 
     public void printStatus(Enemy enemy){
-        System.out.println("\nStatus");
+        System.out.println("\nStatus : \n");
         System.out.println("HP\tStrong against\tNormal against\tWeak against\tSkip against\tName");
         System.out.println("---------------------------------------------------------------------------------");
 
