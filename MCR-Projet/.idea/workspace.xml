@@ -26,9 +26,101 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fight/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+            <state relative-caret-position="465">
+              <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AttackType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fight/AttackType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JAVA/" pinned="false" current-in-tab="false">
+        <entry file="uml://JAVA/">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="644.0" y="880.0">fight.Main</node>
+                <node x="833.0" y="738.0">fight.Warrior</node>
+                <node x="319.1666666666667" y="0.0">fight.AllyTeam</node>
+                <node x="563.0" y="738.0">fight.Magus</node>
+                <node x="0.0" y="880.0">fight.Ansi</node>
+                <node x="823.0" y="12.0">fight.AttackType</node>
+                <node x="374.0" y="880.0">utils.RandomNameGenerator</node>
+                <node x="293.0" y="738.0">fight.Archer</node>
+                <node x="797.5" y="380.0">fight.Enemy</node>
+                <node x="328.5" y="281.0">fight.Ally</node>
+                <node x="0.0" y="738.0">fight.Horseman</node>
+                <node x="1086.5" y="436.0">fight.Attack</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="fight.AllyTeam" target="fight.Ally">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="fight.Archer" target="fight.Ally">
+                  <point x="0.0" y="-48.5" />
+                  <point x="418.0" y="713.0" />
+                  <point x="496.875" y="713.0" />
+                  <point x="-56.125" y="203.5" />
+                </edge>
+                <edge source="fight.Warrior" target="fight.Ally">
+                  <point x="0.0" y="-48.5" />
+                  <point x="960.0" y="713.0" />
+                  <point x="721.375" y="713.0" />
+                  <point x="168.375" y="203.5" />
+                </edge>
+                <edge source="fight.Magus" target="fight.Ally">
+                  <point x="0.0" y="-48.5" />
+                  <point x="688.0" y="713.0" />
+                  <point x="609.125" y="713.0" />
+                  <point x="56.125" y="203.5" />
+                </edge>
+                <edge source="fight.Enemy" target="fight.AttackType">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="fight.Attack" target="fight.AttackType">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="fight.Ally" target="fight.AttackType">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="fight.Ally" target="fight.AllyTeam">
+                  <point x="0.0" y="0.0" />
+                  <point x="0.0" y="0.0" />
+                </edge>
+                <edge source="fight.Horseman" target="fight.Ally">
+                  <point x="0.0" y="-48.5" />
+                  <point x="136.5" y="713.0" />
+                  <point x="384.625" y="713.0" />
+                  <point x="-168.375" y="203.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.4015957446808511" x="245.61589403973505" y="547.615894039735" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Properties</Category>
+                <Category>Constructors</Category>
+                <Category>Methods</Category>
+                <Category>Fields</Category>
+                <Category>Inner Classes</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -53,6 +145,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Ally.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fight/Ally.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="191" column="1" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AllyTeam.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fight/AllyTeam.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Magus.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fight/Magus.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="GradleLocalSettings">
@@ -64,6 +186,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/fight/Main.java" />
+        <option value="$PROJECT_DIR$/src/fight/Ally.java" />
       </list>
     </option>
   </component>
@@ -74,7 +197,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="260" />
+    <option name="x" value="12" />
     <option name="y" value="23" />
     <option name="width" value="1131" />
     <option name="height" value="849" />
@@ -176,6 +299,7 @@
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="RunManager" selected="Application.Unnamed">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -644,6 +768,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="9ebb6cbe-4a43-48a0-a17b-c052f93cc99c" name="Default" comment="" />
@@ -651,26 +778,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1465747877759</updated>
-      <workItem from="1465747878976" duration="229000" />
+      <workItem from="1465747878976" duration="6203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229000" />
+    <option name="totallyTimeSpent" value="6203000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="260" y="23" width="1131" height="849" extended-state="0" />
-    <editor active="true" />
+    <frame x="12" y="23" width="1131" height="849" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.65653896" sideWeight="0.3278237" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.65653896" sideWeight="0.6721763" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -688,6 +815,14 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -717,10 +852,122 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/fight/AttackType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="644.0" y="880.0">fight.Main</node>
+            <node x="833.0" y="738.0">fight.Warrior</node>
+            <node x="319.1666666666667" y="0.0">fight.AllyTeam</node>
+            <node x="563.0" y="738.0">fight.Magus</node>
+            <node x="0.0" y="880.0">fight.Ansi</node>
+            <node x="823.0" y="12.0">fight.AttackType</node>
+            <node x="374.0" y="880.0">utils.RandomNameGenerator</node>
+            <node x="293.0" y="738.0">fight.Archer</node>
+            <node x="797.5" y="380.0">fight.Enemy</node>
+            <node x="328.5" y="281.0">fight.Ally</node>
+            <node x="0.0" y="738.0">fight.Horseman</node>
+            <node x="1086.5" y="436.0">fight.Attack</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="fight.AllyTeam" target="fight.Ally">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="fight.Archer" target="fight.Ally">
+              <point x="0.0" y="-48.5" />
+              <point x="418.0" y="713.0" />
+              <point x="496.875" y="713.0" />
+              <point x="-56.125" y="203.5" />
+            </edge>
+            <edge source="fight.Warrior" target="fight.Ally">
+              <point x="0.0" y="-48.5" />
+              <point x="960.0" y="713.0" />
+              <point x="721.375" y="713.0" />
+              <point x="168.375" y="203.5" />
+            </edge>
+            <edge source="fight.Magus" target="fight.Ally">
+              <point x="0.0" y="-48.5" />
+              <point x="688.0" y="713.0" />
+              <point x="609.125" y="713.0" />
+              <point x="56.125" y="203.5" />
+            </edge>
+            <edge source="fight.Enemy" target="fight.AttackType">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="fight.Attack" target="fight.AttackType">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="fight.Ally" target="fight.AttackType">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="fight.Ally" target="fight.AllyTeam">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+            <edge source="fight.Horseman" target="fight.Ally">
+              <point x="0.0" y="-48.5" />
+              <point x="136.5" y="713.0" />
+              <point x="384.625" y="713.0" />
+              <point x="-168.375" y="203.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.4015957446808511" x="245.61589403973505" y="547.615894039735" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Properties</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Fields</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fight/AllyTeam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fight/Magus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fight/Ally.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="191" column="1" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/fight/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        <state relative-caret-position="465">
+          <caret line="72" column="17" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
           <folding />
         </state>
       </provider>
