@@ -1,7 +1,7 @@
 package fight;
 
 /**
- * Created by antoi on 09.06.2016.
+ * Defines the constant for ANSI command line color writing
  */
 public class Ansi {
     public static final String ANSI_RESET = "\u001B[0m";

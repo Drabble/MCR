@@ -4,11 +4,17 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Defines an ally team which will fight against enemies
+ */
 public class AllyTeam {
-    private List<Ally> allies;
-    private boolean ready;
-    private boolean hasLost = false;
+    private List<Ally> allies;       // The list of members of the team
+    private boolean ready;           // Flag to know if the team is ready to fight
+    private boolean hasLost = false; // Flag to know if the team has lost the fight
 
+    /**
+     * Construct a new ally team
+     */
     public AllyTeam() {
         allies = new LinkedList();
         ready = false;
@@ -16,10 +22,16 @@ public class AllyTeam {
         createTeam();
     }
 
+    /**
+     * @return true if the team is ready
+     */
     public boolean isReady() {
         return ready;
     }
 
+    /**
+     * Get user input for setting the chain of responsibility of the allies
+     */
     private void createTeam() {
         boolean entryOk = false;
         boolean quit = false;
@@ -123,6 +135,11 @@ public class AllyTeam {
         }
     }
 
+    /**
+     * Get user input and set the name of the team
+     *
+     * @return the name of the team
+     */
     private String getName() {
         Scanner scan = new Scanner(System.in);
         String name = "";
@@ -135,19 +152,31 @@ public class AllyTeam {
         return name;
     }
 
+    /**
+     * Use the chain of responsibility of the allies to handle the attack
+     *
+     * @param enemy
+     * @param attack
+     */
     public void handle(Enemy enemy, Attack attack) {
-        for(int i = 0; i < 20; i++){
+        for (int i = 0; i < 20; i++) {
             System.out.println("\n");
         }
         System.out.println(enemy.getName() + " Attacks the team");
         allies.get(0).handleAttack(enemy, attack);
     }
 
-    public void lost(){
+    /**
+     * The team has lost. Set the flag hasLost to true
+     */
+    public void lost() {
         hasLost = true;
     }
 
-    public boolean hasLost(){
+    /**
+     * @return true if the team has lost
+     */
+    public boolean hasLost() {
         return hasLost;
     }
 }

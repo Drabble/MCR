@@ -4,43 +4,65 @@ import utils.RandomNameGenerator;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * Defines an enemy which will attack an AllyTeam
+ */
 public class Enemy {
-    private String name;
-    private AttackType attack;
-    private int numAttacks;
+    private String name;       // The name of the enemy
+    private AttackType attack; // The type of attack
+    private int numAttacks;    // The attack power which will drop if the ally can handle the attack
 
+    /**
+     * Constructs a new random enemy
+     */
     public Enemy() {
         this.name = RandomNameGenerator.generateName();
         //generate a random attack type
         this.attack = AttackType.randomAttackType();
         //generate random attack capacity between 15 and 25
-        this.numAttacks = ThreadLocalRandom.current().nextInt(2,8);
+        this.numAttacks = ThreadLocalRandom.current().nextInt(2, 8);
     }
 
+    /**
+     * @return the name of the enemy
+     */
     public String getName() {
         return Ansi.ANSI_RED + name + Ansi.ANSI_RESET;
     }
 
+    /**
+     * @return the attack type
+     */
     public AttackType getAttackType() {
         return attack;
     }
 
+    /**
+     * Called when the enemy is block. Decrease the power of attack depending on the parameter
+     *
+     * @param num
+     */
     public void blocked(int num) {
         numAttacks -= num;
     }
 
+    /**
+     * @return true if the enemy still has attack power (numAttacks)
+     */
     public boolean canAttack() {
         return numAttacks > 0;
     }
 
-    public String toString(){
+    /**
+     * @return the description of the enemy
+     */
+    public String toString() {
         return attack.toString() + "\t\t" + numAttacks + "\t\t\t\t" + getName();
     }
 
-    public String description(){
-        return "Enemy : " + getName() + ", Attack type " + getAttackType() + ", number of attacks " + numAttacks;
-    }
-
+    /**
+     * @return the attack power of the enemy
+     */
     public int getNumberOfAttacks() {
         return numAttacks;
     }

@@ -7,19 +7,22 @@ import java.util.Random;
  * series Game of Thrones.
  */
 public class RandomNameGenerator {
-    private static String[] firstName = { "Tyrion ", "Petyr ", "Jorah ", "Sandor ", "Joffrey ",
+    private static String[] firstName = {"Tyrion ", "Petyr ", "Jorah ", "Sandor ", "Joffrey ",
             "Viserys ", "Jeor ", "Jaqen ", "Davos ", "Ramsay ", "Daario ", "Obara ", "Hizdahr ", "Gregor ",
-            "Brynden ", "Areo ", "Septa ", "Tormund ","Lancel ", "Janos " };
+            "Brynden ", "Areo ", "Septa ", "Tormund ", "Lancel ", "Janos "};
 
-
-    private static String[] lastName = { "Septa ", "Tully", "Hotah ", "Unella", "Sand", "Martell", "Arryn",
-            "Payne", "Reed", "Tyrell", "Clegane", "Bolton", "Lannister", "Mormont", "H'ghar", "Naharis" ,"Baelish","Targaryen"
-            ,"Cassel", "Cleftjaw" };
+    private static String[] lastName = {"Septa ", "Tully", "Hotah ", "Unella", "Sand", "Martell", "Arryn",
+            "Payne", "Reed", "Tyrell", "Clegane", "Bolton", "Lannister", "Mormont", "H'ghar", "Naharis", "Baelish", "Targaryen"
+            , "Cassel", "Cleftjaw"};
 
     private static Random rand = new Random();
 
+    /**
+     * Generate a new random name
+     *
+     * @return the random name
+     */
     public static String generateName() {
-
         return firstName[rand.nextInt(firstName.length)] +
                 lastName[rand.nextInt(lastName.length)];
 

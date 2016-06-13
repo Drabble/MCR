@@ -20,18 +20,19 @@ public enum AttackType {
 
     /**
      * Generate a random AttackType
+     *
      * @return the AttackType randomly generated
      */
-    public static AttackType randomAttackType(){
+    public static AttackType randomAttackType() {
         return ATTYPES.get(RANDOM.nextInt(SIZE));
     }
 
     @Override
-    public String toString(){
-        switch(this){
-            case Sword :
+    public String toString() {
+        switch (this) {
+            case Sword:
                 return Ansi.ANSI_YELLOW + super.toString() + Ansi.ANSI_RESET;
-            case Arrow :
+            case Arrow:
                 return Ansi.ANSI_GREEN + super.toString() + Ansi.ANSI_RESET;
             case Horse:
                 return Ansi.ANSI_PURPLE + super.toString() + Ansi.ANSI_RESET;
