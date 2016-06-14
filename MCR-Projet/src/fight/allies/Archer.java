@@ -1,4 +1,8 @@
-package fight;
+package fight.allies;
+
+import fight.Ally;
+import fight.AllyTeam;
+import fight.AttackType;
 
 /**
  * Defines an ally archer
@@ -19,7 +23,7 @@ public class Archer extends Ally {
      * @return Return the definition of an archer
      */
     public static String definition() {
-        return "Archer\t\t" + "20\t" + AttackType.Arrow + "\t\t\t" + AttackType.Magic + "\t\t\t" + AttackType.Sword + "\t\t\t" + AttackType.Horse;
+        return "Archer\t\t" + "20\t" + AttackType.Arrow + "\t\t" + AttackType.Magic + "\t\t" + AttackType.Sword + "\t\t" + AttackType.Horse;
     }
 
     /**

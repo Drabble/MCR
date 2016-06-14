@@ -1,4 +1,8 @@
-package fight;
+package fight.allies;
+
+import fight.Ally;
+import fight.AllyTeam;
+import fight.AttackType;
 
 /**
  * Defines an ally warrior
@@ -19,7 +23,7 @@ public class Warrior extends Ally {
      * @return the definition of a warrior
      */
     public static String definition() {
-        return "Warrior\t\t" + "30\t" + AttackType.Sword + "\t\t\t" + AttackType.Horse + "\t\t\t" + AttackType.Magic + "\t\t\t" + AttackType.Arrow;
+        return "Warrior\t\t" + "30\t" + AttackType.Sword + "\t\t" + AttackType.Horse + "\t\t" + AttackType.Magic + "\t\t" + AttackType.Arrow;
     }
 
     /**

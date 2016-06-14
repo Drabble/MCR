@@ -19,8 +19,8 @@ public class Enemy {
         this.name = RandomNameGenerator.generateName();
         //generate a random attack type
         this.attack = AttackType.randomAttackType();
-        //generate random attack capacity between 15 and 25
-        this.numAttacks = ThreadLocalRandom.current().nextInt(2, 8);
+        //generate random attack capacity between 2 and 6
+        this.numAttacks = ThreadLocalRandom.current().nextInt(2, 6);
     }
 
     /**
@@ -57,7 +57,7 @@ public class Enemy {
      * @return the description of the enemy
      */
     public String toString() {
-        return attack.toString() + "\t\t" + numAttacks + "\t\t\t\t" + getName();
+        return attack.toString() + "\t\t" + numAttacks + "\t\t" + getName();
     }
 
     /**

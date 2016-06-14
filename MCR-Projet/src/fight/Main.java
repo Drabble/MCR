@@ -26,7 +26,7 @@ public class Main {
 
                 System.out.println("List of enemies : \n");
                 System.out.println("No\tAttack type\tAttack power\tName");
-                System.out.println("-----------------------------------");
+                System.out.println("-------------------------------------------------------");
                 int cnt = 1;
                 for (Enemy e : enemies) {
                     System.out.println(cnt++ + "\t" + e);

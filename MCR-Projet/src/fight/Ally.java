@@ -140,13 +140,13 @@ public abstract class Ally {
     public void printStatus(Enemy enemy) {
         System.out.println("\nStatus : \n");
         System.out.println("HP\tStrong against\tNormal against\tWeak against\tSkip against\tName");
-        System.out.println("---------------------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------------");
 
         printAllies();
 
         System.out.println("\nAttack type\tNumber of attacks\tName");
-        System.out.println("----------------------------------------");
-        System.out.println(enemy.getAttackType() + "\t\t" + enemy.getNumberOfAttacks() + "\t\t\t\t\t" + enemy.getName());
+        System.out.println("------------------------------------------------");
+        System.out.println(enemy.getAttackType() + "\t\t" + enemy.getNumberOfAttacks() + "\t\t\t" + enemy.getName());
         System.out.println();
         System.out.println("Click enter to continue !");
         try {
@@ -163,7 +163,7 @@ public abstract class Ally {
      * Print the status of the allies
      */
     public void printAllies() {
-        System.out.println(getHp() + "\t" + getStrong() + "\t\t\t" + getNormal() + "\t\t\t" + getWeak() + "\t\t\t" + getSkip() + "\t\t\t" + name());
+        System.out.println(getHp() + "\t" + getStrong() + "\t\t" + getNormal() + "\t\t" + getWeak() + "\t\t" + getSkip() + "\t\t" + name());
         if (next != null) {
             next.printAllies();
         }

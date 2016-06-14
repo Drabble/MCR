@@ -1,4 +1,8 @@
-package fight;
+package fight.allies;
+
+import fight.Ally;
+import fight.AllyTeam;
+import fight.AttackType;
 
 /**
  * Defines an ally horseman
@@ -19,7 +23,7 @@ public class Horseman extends Ally {
      * @return the definition of a horseman
      */
     public static String definition() {
-        return "Horseman\t" + "25\t" + AttackType.Horse + "\t\t\t" + AttackType.Sword + "\t\t\t" + AttackType.Arrow + "\t\t\t" + AttackType.Magic;
+        return "Horseman\t" + "25\t" + AttackType.Horse + "\t\t" + AttackType.Sword + "\t\t" + AttackType.Arrow + "\t\t" + AttackType.Magic;
     }
 
     /**

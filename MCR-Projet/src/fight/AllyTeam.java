@@ -1,5 +1,10 @@
 package fight;
 
+import fight.allies.Archer;
+import fight.allies.Horseman;
+import fight.allies.Magus;
+import fight.allies.Warrior;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -41,7 +46,7 @@ public class AllyTeam {
         // Show choices
         System.out.println("List of classes : \n");
         System.out.println("Id\tType\t\tHP\tStrong against\tNormal against\tWeak against\tSkip against");
-        System.out.println("-------------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------------");
         System.out.println("1\t" + Warrior.definition());
         System.out.println("2\t" + Archer.definition());
         System.out.println("3\t" + Horseman.definition());
@@ -111,7 +116,7 @@ public class AllyTeam {
             if (!quit) {
                 System.out.println("\nResume of the team : \n");
                 System.out.println("No\tClass\t\tHP\tName");
-                System.out.println("------------------------");
+                System.out.println("------------------------------------");
                 for (int c = 0; c < allies.size(); c++) {
                     System.out.println((c + 1) + "\t" + allies.get(c).description());
                 }
